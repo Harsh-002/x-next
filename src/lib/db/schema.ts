@@ -75,7 +75,7 @@ export const follows = pgTable(
     return {
       pk: primaryKey({ columns: [table.followerId, table.followedId] }),
       followerIdIdx: index("follows_follower_id_idx").on(table.followerId),
-      followedIdx: index("follows_followed_id_idx").on(table.followedId),
+      followedIdIdx: index("follows_followed_id_idx").on(table.followedId),
     };
   }
 );
@@ -144,7 +144,7 @@ export const followsRelations = relations(follows, ({ one }) => ({
 }));
 
 export const hashtagsRelations = relations(hashtags, ({ many }) => ({
-  posts: many(hashtags),
+  posts: many(postHashtags),
 }));
 
 export const postHashtagsRelations = relations(postHashtags, ({ one }) => ({

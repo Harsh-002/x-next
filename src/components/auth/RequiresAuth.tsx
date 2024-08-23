@@ -32,7 +32,7 @@ const RequiresAuth = ({
 
   return (
     <Component onClick={handleClick} className={className}>
-      Requires Auth
+      {children}
     </Component>
   );
 };

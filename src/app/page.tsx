@@ -1,7 +1,13 @@
+import Header from "@/components/layout/Header";
+import NewPostForm from "@/components/post/NewPostForm";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello
-    </main>
+    <>
+      <Header>
+        <h1>Home</h1>
+      </Header>
+      <NewPostForm />
+    </>
   );
 }
