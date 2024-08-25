@@ -82,7 +82,11 @@ function PostItemContent({
             <span>{commentCount}</span>
           </button>
         </div>
-        <LikeCount likeCount={likeCount} likedByUser={!!likedByUser} />
+        <LikeCount
+          likeCount={likeCount}
+          likedByUser={!!likedByUser}
+          postId={postId}
+        />
         <SharePost postId={postId} />
       </div>
     </div>
