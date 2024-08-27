@@ -1,3 +1,4 @@
+"use server";
 import { and, eq } from "drizzle-orm";
 import { getServerUserId } from "../auth/getServerUserId";
 import { db, likes } from "../db";

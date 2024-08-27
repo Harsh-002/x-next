@@ -58,7 +58,7 @@ function PostItemContent({
     >
       <Avatar username={username} profileId={profileId} />
       <div className="flex-1">
-        <div className="mb-1 flex gap-2">
+        <div className="mb-1 flex gap-2 items-center">
           <ProfileLink
             username={username}
             className="flex items-center hover:underline"
@@ -69,7 +69,7 @@ function PostItemContent({
             <div
               onClick={handleParentLink}
               role="link"
-              className="text-sm italic"
+              className="text-xs italic text-slate-300 hover:underline"
             >
               <span>@replied</span>
             </div>
@@ -81,13 +81,13 @@ function PostItemContent({
             <LuMessageCircle className="mr-1 h-5 w-5" />
             <span>{commentCount}</span>
           </button>
+          <LikeCount
+            likeCount={likeCount}
+            likedByUser={!!likedByUser}
+            postId={postId}
+          />
+          <SharePost postId={postId} />
         </div>
-        <LikeCount
-          likeCount={likeCount}
-          likedByUser={!!likedByUser}
-          postId={postId}
-        />
-        <SharePost postId={postId} />
       </div>
     </div>
   );
