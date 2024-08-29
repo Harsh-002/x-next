@@ -35,7 +35,7 @@ const RightSidebar: React.FC = async () => {
     getTopProfiles(),
   ]);
   return (
-    <aside className="hidden p-6 mb-4 overflow-y-auto md:block xl:w-1/5">
+    <aside className="hidden p-6 mb-4 overflow-y-auto md:top-0 md:block xl:w-1/5">
       <section className="mb-4 rounded-lg bg-slate-100 p-6 w-full">
         <h2 className="mb-2 text-xl font-bold">{`What's happening`}</h2>
         <ul>
