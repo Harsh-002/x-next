@@ -1,8 +1,9 @@
 import HashtagSearchInput from "@/components/explore/HashtagSearchInput";
 import Header from "@/components/layout/Header";
 import Post from "@/components/post/Post";
+import BlockSpinner from "@/components/ui/BlockSpinner";
 import { getPostsByHashtag } from "@/lib/data/posts/getPostsByHashtag";
-import React from "react";
+import React, { Suspense } from "react";
 import { LuSearch } from "react-icons/lu";
 
 interface ExplorePageProps {
@@ -22,7 +23,9 @@ const ExplorePage = async ({ searchParams }: ExplorePageProps) => {
           <HashtagSearchInput hashtagParam={parsedHashtag} />
         </div>
       </Header>
-      <PostsLoader hashtag={parsedHashtag} />
+      <Suspense fallback={<BlockSpinner />} key={hashtag}>
+        <PostsLoader hashtag={parsedHashtag} />
+      </Suspense>
     </div>
   );
 };

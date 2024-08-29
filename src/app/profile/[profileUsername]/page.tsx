@@ -3,10 +3,12 @@ import Post from "@/components/post/Post";
 import FollowButton from "@/components/profile/FollowButton";
 import ProfileForm from "@/components/profile/ProfileForm";
 import Avatar from "@/components/ui/Avatar";
+import BlockSpinner from "@/components/ui/BlockSpinner";
 import { getProfileByUsername } from "@/lib/data/profile/getProfile";
 import { getProfilePosts } from "@/lib/data/profile/getProfilePosts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { z } from "zod";
 
 interface ProfileUsernamePageProps {
@@ -71,8 +73,10 @@ export default async function ProfileUsernamePage({
           Replies
         </Link>
       </div>
-      {tab === "posts" && <Posts username={profile.username} />}
-      {tab === "replies" && <Replies username={profile.username} />}
+      <Suspense fallback={<BlockSpinner />} key={tab}>
+        {tab === "posts" && <Posts username={profile.username} />}
+        {tab === "replies" && <Replies username={profile.username} />}
+      </Suspense>
     </div>
   );
 }
