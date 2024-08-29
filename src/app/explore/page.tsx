@@ -14,7 +14,7 @@ interface ExplorePageProps {
 
 const ExplorePage = async ({ searchParams }: ExplorePageProps) => {
   const { h: hashtag } = searchParams;
-  const parsedHashtag = hashtag ? decodeURIComponent(hashtag) : undefined;
+  const parsedHashtag = hashtag ? decodeURIComponent(hashtag) : "";
   return (
     <div className="w-full">
       <Header>

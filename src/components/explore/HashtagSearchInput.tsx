@@ -1,5 +1,5 @@
 "use client";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 interface HashtagSearchInputProps {
@@ -8,7 +8,7 @@ interface HashtagSearchInputProps {
 
 const HashtagSearchInput = ({ hashtagParam }: HashtagSearchInputProps) => {
   const router = useRouter();
-  const searchParams = useParams();
+  const searchParams = useSearchParams();
   const [hashtag, setHashtag] = useState("");
 
   useEffect(() => {
