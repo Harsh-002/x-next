@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { LuSparkle } from "react-icons/lu";
 import Nav from "./Nav";
+import PostModal from "../post/PostModal";
 
 const SideNavbar: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const SideNavbar: React.FC = () => {
         <LuSparkle size={25} />
       </Link>
       <Nav />
+      <PostModal />
     </aside>
   );
 };
