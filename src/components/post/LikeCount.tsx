@@ -37,7 +37,7 @@ const LikeCount = ({ likeCount, likedByUser, postId }: LikeCountProps) => {
   }
 
   return (
-    <div className="flex">
+    <div className="flex items-center gap-1">
       <RequiresAuth className="flex items-center" onClick={likeOrDislikePost}>
         <LuHeart
           className={`my-1 h-5 w-5 ${optimisticLikesByUser ? "fill-red-500" : "hover:fill-red-300"}`}

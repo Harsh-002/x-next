@@ -26,7 +26,7 @@ interface PostProps {
 const Post = (props: PostProps) => {
   if (props.hasLink) {
     return (
-      <Link href={`post/${props.postId}`}>
+      <Link href={`/post/${props.postId}`}>
         <PostItemContent {...props} />
       </Link>
     );
